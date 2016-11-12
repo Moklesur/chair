@@ -50,9 +50,6 @@ add_action( 'themetim_header_social', 'header_social' );
  * Header My Account
  */
 function header_account(){
-    if(get_theme_mod('top_header_tel_enable', '1')):
-        echo '<li><i class="fa fa-phone"></i> '.get_theme_mod('top_header_tel', '880 0000 000000').'</li>';
-    endif;
     if(get_theme_mod('top_header_account_enable', '1')){
         $login_register =  get_permalink(get_theme_mod('header_login_register'));
         $header_myaccount =  get_permalink(get_theme_mod('header_myaccount'));

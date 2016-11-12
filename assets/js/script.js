@@ -14,11 +14,11 @@ jQuery(function(){
             margin:'',
             alignment: 'center',
             minHeight: '600px',
-            barPosition: 'top',
+            barPosition: 'bottom',
             thumbnails: true,
             playPause: false,
-            loaderColor: '#f9f9f9',
-            loaderBgColor: '#ddd',
+            loaderColor: '#fff',
+            loaderBgColor: '#ffbd33',
             hover: true,
             opacityOnGrid: false
         });
@@ -99,11 +99,11 @@ jQuery(function(){
      *******************************************************************************/
     if(jQuery('.animsition').length){
         jQuery(".animsition").animsition({
-            inClass: 'fade-in',
-            outClass: 'fade-out',
+            inClass: 'fade-in-up-sm',
+            outClass: 'fade-out-up-sm',
             inDuration: 1500,
             outDuration: 800,
-            linkElement: 'a:not([target="_blank"]):not([href^="#"])',
+            linkElement: '.navbar-collapse a',
             // e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'
             loading: true,
             loadingParentElement: 'body', //animsition wrapper element

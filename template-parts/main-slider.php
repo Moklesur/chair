@@ -23,7 +23,7 @@ $slider_query = new WP_Query( $slider_var );
                         <h2 class="text-uppercase animated fadeIn"><?php echo $heading;?></h2>
                         <?php endif; ?>
                         <?php if($text != ''): ?>
-                            <p class=" animated fadeInUp"><?php echo $text; ?></p>
+                            <p class=" animated fadeInUp margin-top-30 center-block margin-bottom-0"><?php echo $text; ?></p>
                         <?php endif; ?>
                         <?php if($link != '' ||  $link_title != ''): ?>
                             <a href="<?php echo $link;?>" class="btn btn-default text-uppercase  animated fadeInDown"><?php echo $link_title;?></a>

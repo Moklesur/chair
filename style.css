@@ -15,7 +15,7 @@ Tags: fully customizable, visual page builder, mobile responsive, responsive, gr
 body{
 	font-weight: 400;
 }
-a,.btn,input,button,.woocommerce .product-fix .compare,.woocommerce .product-fix .yith-wcqv-button,.woocommerce ul.products li.product .thumbs{
+a,.btn,input,button,.woocommerce .product-fix .compare,.woocommerce .product-fix .yith-wcqv-button,.woocommerce ul.products li.product .thumbs,.header,.sticky .header-bottom,.sticky .header-bottom,.header-bottom{
 	-webkit-transition: all .3s ease-in-out;
 	-moz-transition: all .3s ease-in-out;
 	-ms-transition: all .3s ease-in-out;
@@ -28,9 +28,12 @@ a:hover{
 a,.btn,.woocommerce ul.products li.product .button,.form-control,.woocommerce .cart .button, .woocommerce .cart input.button, .woocommerce input.button:disabled, .woocommerce input.button:disabled[disabled], .woocommerce-cart table.cart td.actions .coupon .input-text,.select2-container .select2-choice, .woocommerce-cart .wc-proceed-to-checkout a.checkout-button,.woocommerce table.shop_table,.woocommerce #payment #place_order,#add_payment_method #payment, .woocommerce-cart #payment, .woocommerce-checkout #payment,.navbar-default .navbar-toggle{
 	border-radius: 0;
 }
+img {
+	max-width: 100%;
+}
 h1, h2, h3, h4, h5, h6{
 	letter-spacing: 2px;
-	font-weight: 700;
+	font-weight: 500;
 }
 a,p,.woocommerce input.button,.woocommerce-cart .cart-collaterals .cart_totals tr th,.woocommerce-cart .wc-proceed-to-checkout a.checkout-button,.woocommerce .cart th,.woocommerce table.shop_table th,.woocommerce-Address address {
 	letter-spacing: 1px;
@@ -52,6 +55,7 @@ p,.woocommerce-Address address {
 	margin: 0;
 }
 .badge{
+	background: #ffbd33;
 	padding: 0;
 	border-radius: 50%;
 	width: 22px;
@@ -123,6 +127,9 @@ p,.woocommerce-Address address {
 .margin-top-40{
 	margin-top: 40px;
 }
+.margin-bottom-0{
+	margin-bottom:0;
+}
 .woocommerce ul.products li.product .price del,.margin-right-10{
 	margin-right: 10px;
 }
@@ -144,17 +151,24 @@ p,.woocommerce-Address address {
 /********************************************************
     ## Header
 ********************************************************/
-.header-top {
-	background: #f8f8f8;
+.header .header-bottom .navbar-default .search-cart li> a.cart-contents{
+	padding-right: 0;
+}
+.header .header-bottom .navbar-default .search-cart li> a.search-border{
+	padding-right: 15px;
+}
+.header .header-bottom .navbar-default li> a{
+	color: #fff;
+}
+.header{
+	position: fixed;
+	z-index: 1;
 }
 .header-top .header-social a{
 	padding: 0 7px 0 0;
 }
 .header-middle .mini-cart{
 	margin-top: 25px;
-}
-.header-bottom{
-	background: #f8f8f8;
 }
 .header-bottom .navbar-default{
 	margin-bottom: 0;
@@ -163,22 +177,40 @@ p,.woocommerce-Address address {
 	border: 0;
 }
 .sticky .header-middle,.sticky .header-top{
-	display: none;
 }
 header,.sticky .header-bottom{
 	transition: all 0.4s ease;
 }
 .sticky .header-bottom{
 	top: 0;
-	position: fixed;
-	width: 100%;
-	z-index: 10;
+	background: rgba(0,0,0,.5);
+}
+.header.sticky{
+	margin-top: -40px;
 }
 /********************************************************
     ## Menu, Slider
 ********************************************************/
+.search-cart .search-fix{
+	left: auto;
+	right: 0;
+	width: 280px;
+	padding: 6px 10px;
+	margin: 5px 0 0 0;
+	border-radius:0 ;
+}
+.header .header-bottom .navbar-default .search-cart li> a{
+	display: inline-block;
+}
+.navbar-default .navbar-collapse{
+	padding-left: 15%;
+}
 .primary-menu ul li a{
+	text-transform: uppercase;
 	padding: 15px 30px 15px 0;
+	font-weight: 700;
+	font-size: 13px;
+	letter-spacing: 2px;
 }
 .main-slider{
 	margin: 0 !important;
@@ -195,6 +227,8 @@ header,.sticky .header-bottom{
 	padding: 0;
 	border-radius: 0;
 	margin: 0;
+	border: 0;
+	box-shadow: none;
 }
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{
 	background-color: transparent;
@@ -208,12 +242,26 @@ header,.sticky .header-bottom{
 }
 .main-slider .slider-inner{
 	position: absolute;
-	top: 40%;
+	top: 32%;
 	width: 100%;
 }
 .slider-wrap{
 	max-width: 950px;
 	margin:0 auto;
+}
+.slider-wrap h2{
+	letter-spacing: 5px;
+	margin: 0;
+	font-size: 60px;
+}
+.main-slider .slider-wrap p,.slider-wrap h2{
+	color: #fff;
+}
+.main-slider .slider-wrap p{
+	max-width: 400px;
+}
+.main-slider .slider-wrap a{
+	margin-top: 30px;
 }
 .camera_wrap.main-slider .btn{
 	padding: 10px 20px;

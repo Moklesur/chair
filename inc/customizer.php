@@ -68,19 +68,7 @@ function themetim_customize_register( $wp_customize ) {
 	/*********************************************
 	 * General
 	 *********************************************/
-	$wp_customize->add_section( 'general_settings', array(
-		'title' => __( 'General Settings', 'text_domain' ),
-		'description' => '',
-		'priority' => 15,
-	) );
-	$wp_customize->add_setting( 'general', array(
-		'default'           => '',
-	) );
-	$wp_customize->add_control( 'general', array(
-		'label' => __( 'Default', 'text_domain' ),
-		'section' => 'general_settings',
-		'settings' => 'general'
-	) );
+
 
 	/*********************************************
 	 * Social Links
@@ -325,7 +313,7 @@ function themetim_customize_register( $wp_customize ) {
 		)
 	);
 	$wp_customize->add_control( new themetim_divider( $wp_customize, 'header_top', array(
-			'label' => __('Header Top', 'themetidy'),
+			'label' => __('Header', 'themetidy'),
 			'section' => 'title_tagline',
 			'settings' => 'themetim_options[divider]'
 		) )
@@ -426,21 +414,6 @@ function themetim_customize_register( $wp_customize ) {
 		'section' => 'title_tagline',
 		'settings' => 'cart_enable'
 	) );
-	/**
-	 * ThemeTim Divider
-	 */
-	$wp_customize->add_setting('themetim_options[divider]', array(
-			'type'              => 'divider_control',
-			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'esc_attr',
-		)
-	);
-	$wp_customize->add_control( new themetim_divider( $wp_customize, 'header_bottom', array(
-			'label' => __('Bottom Header', 'themetidy'),
-			'section' => 'title_tagline',
-			'settings' => 'themetim_options[divider]'
-		) )
-	);
 
 	$wp_customize->add_setting( 'bottom_header_search', array(
 		'default'           => '1',

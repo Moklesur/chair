@@ -84,18 +84,6 @@ endif;
 add_action( 'after_setup_theme', 'themetim_setup' );
 
 /**
- * @param $classes
- * @return array
- * Add Body Class for Animation
- */
-function themetim_body_class($classes) {
-	$classes[] = 'animsition';
-	return $classes;
-}
-
-add_filter('body_class', 'themetim_body_class');
-
-/**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
@@ -136,8 +124,8 @@ add_action( 'widgets_init', 'themetim_widgets_init' );
  * fonts.googleapis.com/css?family=Open+Sans:400,600
  */
 function themetim_scripts() {
-	wp_enqueue_style( 'themetim-body-fonts', '//fonts.googleapis.com/css?family=' . esc_attr(get_theme_mod('body_font_family','Open+Sans').":".get_theme_mod('body_font_weight','300,400')) );
-	wp_enqueue_style( 'themetim-heading-fonts', '//fonts.googleapis.com/css?family=' . esc_attr(get_theme_mod('heading_font_family','Open+Sans').":".get_theme_mod('heading_font_weight','400,700')) );
+	wp_enqueue_style( 'themetim-body-fonts', '//fonts.googleapis.com/css?family=' . esc_attr(get_theme_mod('body_font_family','Open+Sans').":".get_theme_mod('body_font_weight','400')) );
+	wp_enqueue_style( 'themetim-heading-fonts', '//fonts.googleapis.com/css?family=' . esc_attr(get_theme_mod('heading_font_family','Open+Sans').":".get_theme_mod('heading_font_weight','500')) );
 	wp_enqueue_style( 'themetim-animate', get_template_directory_uri() . '/assets/css/animate.min.css', array(), '3.5.1' );
 	wp_enqueue_style( 'themetim-font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.min.css', array(), '4.5.0' );
 	wp_enqueue_style( 'themetim-animsition', get_template_directory_uri() . '/assets/css/animsition.min.css', array(), '4.0.2' );
