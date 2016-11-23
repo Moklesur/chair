@@ -463,16 +463,6 @@ function themetim_customize_register( $wp_customize ) {
 		) )
 	);
 	/********************* Top Footer ************************/
-	$wp_customize->add_setting( 'social_footer_enable', array(
-		'default'           => '1',
-	) );
-	$wp_customize->add_control( 'social_footer_enable', array(
-		'label' => __( 'Enable Footer Social', 'text_domain' ),
-		'type' => 'checkbox',
-		'description'   => __('## Please Go Back To Social Media Settings For Social Links ##', 'text_domain'),
-		'section' => 'footer_settings',
-		'settings' => 'social_footer_enable'
-	) );
 
 	$wp_customize->add_setting( 'newsletter_footer_enable', array(
 		'default'           => '1',
@@ -522,6 +512,16 @@ function themetim_customize_register( $wp_customize ) {
 	);
 
 	/********************* Middle Footer ************************/
+	$wp_customize->add_setting( 'footer_logo', array(
+		'default'           => '',
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'footer_logo', array(
+		'label' => __( 'Footer Logo', 'text_domain' ),
+		'section' => 'footer_settings',
+		'mime_type' => 'image',
+	) ) );
+
 	$wp_customize->add_setting( 'middle_footer_text_enable', array(
 		'default'           => '1',
 	) );
@@ -533,16 +533,6 @@ function themetim_customize_register( $wp_customize ) {
 		'settings' => 'middle_footer_text_enable'
 	) );
 
-	$wp_customize->add_setting( 'middle_footer_text_heading', array(
-		'default'           => 'About',
-	) );
-	$wp_customize->add_control( 'middle_footer_text_heading', array(
-		'label' => __( 'Heading', 'text_domain' ),
-		'type' => 'text',
-		'section' => 'footer_settings',
-		'settings' => 'middle_footer_text_heading',
-		'description'   => __('', 'text_domain')
-	) );
 	$wp_customize->add_setting( 'middle_footer_text', array(
 		'default'           => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.',
 	) );
@@ -607,16 +597,7 @@ function themetim_customize_register( $wp_customize ) {
 		'settings' => 'middle_footer_nav_heading_3',
 		'description'   => __('', 'text_domain')
 	) );
-	$wp_customize->add_setting( 'middle_footer_nav_3_enable', array(
-		'default'           => '1',
-	) );
-	$wp_customize->add_control( 'middle_footer_nav_3_enable', array(
-		'label' => __( 'Enable Nav 3', 'text_domain' ),
-		'type' => 'checkbox',
-		'description'   => __('', 'text_domain'),
-		'section' => 'footer_settings',
-		'settings' => 'middle_footer_nav_3_enable'
-	) );
+
 
 	/**
 	 * ThemeTim Divider
@@ -697,6 +678,15 @@ function themetim_customize_register( $wp_customize ) {
 		'description'   => __('', 'text_domain'),
 		'section' => 'blog_settings',
 		'settings' => 'blog_sidebar_enable'
+	) );
+	$wp_customize->add_setting( 'blog_posts_limit', array(
+		'default'           => '4',
+	) );
+	$wp_customize->add_control( 'blog_posts_limit', array(
+		'type'        => 'number',
+		'section'     => 'blog_settings',
+		'settings' => 'blog_posts_limit',
+		'label'       => __('Blog Posts Limit', 'text_domain'),
 	) );
 	$wp_customize->add_setting( 'excerpt_lenght', array(
 		'default'           => '60',

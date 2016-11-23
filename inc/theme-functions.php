@@ -65,53 +65,15 @@ add_action( 'themetim_header_account', 'header_account' );
  * Footer
  ********************************************************/
 /**
- * Footer Social
- */
-function footer_social() {
-    if(get_theme_mod('social_footer_enable','1')) :
-        ?>
-        <ul class="list-inline footer-social">
-            <?php
-            if(get_theme_mod('footer_fb','1')) {
-                echo '<li><a href="'.get_theme_mod('footer_fb','https://www.facebook.com/ ').'"  target="_blank"><i class="fa fa-facebook"></i></a></li>';
-            }
-            if(get_theme_mod('footer_tw','1')) {
-                echo '<li><a href="'.get_theme_mod('footer_tw','https://twitter.com').'" target="_blank"><i class="fa fa-twitter"></i></a></li>';
-            }
-            if(get_theme_mod('footer_li','1')) {
-                echo '<li><a href="'.get_theme_mod('footer_li','https://linkedin.com').'" target="_blank"><i class="fa fa-linkedin"></i></a></li>';
-            }
-            if(get_theme_mod('footer_pint','1')) {
-                echo '<li><a href="'.get_theme_mod('footer_pint','https://pinterest.com').'" target="_blank"><i class="fa fa-pinterest"></i></a></li>';
-            }
-            if(get_theme_mod('footer_ins','1')) {
-                echo '<li><a href="'.get_theme_mod('footer_ins','https://instagram.com').'" target="_blank"><i class="fa fa-linkedin"></i></a></li>';
-            }
-            if(get_theme_mod('footer_dri','1')) {
-                echo '<li><a href="'.get_theme_mod('footer_dri','https://dribbble.com').'" target="_blank"><i class="fa fa-dribbble"></i></a></li>';
-            }
-            if(get_theme_mod('footer_plus','1')) {
-                echo '<li><a href="'.get_theme_mod('footer_plus','https://plus.google.com').'" target="_blank"><i class="fa fa-google-plus"></i></a></li>';
-            }
-            if(get_theme_mod('footer_you','1')) {
-                echo '<li><a href="'.get_theme_mod('footer_you','https://youtube.com').'" target="_blank"><i class="fa fa-youtube"></i></a></li>';
-            }
-            ?>
-        </ul>
-        <?php
-    endif;
-}
-add_action( 'themetim_footer_social', 'footer_social' );
-/**
  * Footer Newsletter
  */
 function footer_newsletter(){
     ?>
-    <form class="form-inline margin-top-xs-20" action="#" method="post" target="_blank">
+    <form class="form-inline padding-gap-1 padding-gap-2 text-uppercase" action="#" method="post" target="_blank">
         <div class="form-group">
-            <h3 class="margin-clear padding-clear pull-left">Newsletter</h3>
+            <h3 class="pull-left">Newsletter</h3>
             <input type="email" class="form-control" name="newsletter-email" id="newsletter-email" placeholder="info@yoursite.com" required="">
-            <button type="submit" class="btn btn-primary">Subscribe</button>
+            <button type="submit" class="btn btn-default">Subscribe</button>
         </div>
     </form>
     <?php
@@ -123,9 +85,15 @@ add_action( 'themetim_footer_newsletter', 'footer_newsletter' );
  */
 function middle_footer_description(){
     ?>
-    <div class="col-md-4 col-sm-6 col-xs-12">
-        <h4><?php echo get_theme_mod('middle_footer_text_heading','About'); ?></h4>
-        <p><?php echo get_theme_mod('middle_footer_text','Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.'); ?></p>
+    <div class="col-md-4 col-sm-6 col-xs-12 margin-top-40">
+        <?php
+        $footer_logo = get_theme_mod('footer_logo');
+        if ($footer_logo != 0) { ?>
+            <a href="<?php echo site_url('/'); ?>"><img src="<?php echo wp_get_attachment_url($footer_logo); ?>" class="img-responsive" alt="" /></a>
+            <?php
+        }
+        ?>
+        <p class="margin-top-20"><?php echo get_theme_mod('middle_footer_text','Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.'); ?></p>
     </div>
     <?php
 }
@@ -174,8 +142,10 @@ add_action( 'themetim_middle_footer_nav_2', 'middle_footer_nav_2' );
 function middle_footer_nav_3(){
     ?>
     <div class="col-md-4 col-sm-6 col-xs-12">
-        <h4><?php echo get_theme_mod('middle_footer_nav_heading_3','Follow Us'); ?></h4>
-        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fwww.moklesur.info%2F&tabs=timeline&width=340&height=200&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=true&appId=446495938799816" width="100%" height="200" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+        <h4><?php echo get_theme_mod('middle_footer_nav_heading_3','Contact Us'); ?></h4>
+        <p><i class="fa fa-map-marker"></i> 888 MK, South East, Kolon</p>
+        <p><i class="fa fa-phone"></i> +88 000 000 0000</p>
+        <p><i class="fa fa-envelope"></i> support@themetim.com</p>
     </div>
     <?php
 }
@@ -187,7 +157,7 @@ add_action( 'themetim_middle_footer_nav_3', 'middle_footer_nav_3' );
 function bottom_footer_copyright(){
     ?>
     <div class="col-md-6 col-sm-6 col-xs-12 site-info">
-        <p><?php echo get_theme_mod('bottom_footer_copyright','© 2016 ThemeTim. All Rights Reserved.'); ?></p>
+        <p class="margin-null"><?php echo get_theme_mod('bottom_footer_copyright','© 2016 ThemeTim. All Rights Reserved.'); ?></p>
     </div>
     <?php
 }
@@ -198,13 +168,13 @@ add_action( 'themetim_bottom_footer_copyright', 'bottom_footer_copyright' );
  */
 function bottom_footer_nav(){
     ?>
-    <div class="col-md-6 col-sm-6 col-xs-12">
-        <?php
-        if ( has_nav_menu( 'footer-3' ) ) :
-            wp_nav_menu( array( 'theme_location' => 'footer-3', 'menu_class' => 'list-inline text-right text-capitalize', 'menu_id' => 'primary-menu','container' => '' ) );
-        else: echo '<p class="pull-right text-capitalize">Please select <a href="/wp-admin/nav-menus.php" class="text-muted">Footer Nav 3</a> </p>';
-        endif;
-        ?>
+    <div class="col-md-6 col-sm-6 col-xs-12 text-right payment">
+        <ul class="list-inline margin-null">
+            <li><i class="fa fa-cc-visa fa-2x"></i></li>
+            <li><i class="fa fa-cc-mastercard fa-2x"></i></li>
+            <li><i class="fa fa-cc-discover fa-2x"></i></li>
+            <li><i class="fa fa-cc-paypal fa-2x"></i></li>
+        </ul>
     </div>
     <?php
 }

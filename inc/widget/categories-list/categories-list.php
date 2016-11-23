@@ -35,7 +35,7 @@ class CategoriesList_Widget extends WP_Widget {
         $product_limit = apply_filters( 'widget_title', $instance['product_limit'] );
         $product_columns = apply_filters( 'widget_title', $instance['product_columns'] );
         ?>
-        <div class="categories-list-widget default-widget <?php echo $carousel_class; ?>">
+        <div class="categories-list-widget default-widget text-center <?php echo $carousel_class; ?>">
             <?php echo $title ?>
             <?php echo do_shortcode('[product_categories number='.$product_limit.' columns='.$product_columns.']'); ?>
         </div>
@@ -67,8 +67,8 @@ class CategoriesList_Widget extends WP_Widget {
      */
     public function form( $instance ) {
         $title = ! empty( $instance['title'] ) ? $instance['title'] : __( 'Categories List', 'text_domain' );
-        $product_limit = ! empty( $instance['product_limit'] ) ? $instance['product_limit'] : __( '4', 'text_domain' );
-        $product_columns = ! empty( $instance['product_columns'] ) ? $instance['product_columns'] : __( '4', 'text_domain' );
+        $product_limit = ! empty( $instance['product_limit'] ) ? $instance['product_limit'] : __( '6', 'text_domain' );
+        $product_columns = ! empty( $instance['product_columns'] ) ? $instance['product_columns'] : __( '3', 'text_domain' );
         $product_carousel_enable = ! empty( $instance['product_carousel_enable'] ) ? $instance['product_carousel_enable'] : __( '', 'text_domain' );
         ?>
         <div class="widget-area">

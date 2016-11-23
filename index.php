@@ -15,22 +15,37 @@
 get_header(); ?>
 
 	<main class="home-page woocommerce">
+		<?php if ( class_exists( 'WooCommerce' ) && !is_front_page()) {?>
+			<section class="breadcrumb-wrap text-capitalize">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<?php woocommerce_breadcrumb(); ?>
+						</div>
+					</div>
+				</div>
+			</section>
+		<?php } ?>
 		<section class="banner">
 			<div class="container">
 				<div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						<?php
+						if ( is_home() && ! is_front_page() ) : ?>
+							<header>
+								<h2 class="page-title page-header screen-reader-text"><?php single_post_title(); ?></h2>
+							</header>
+							<?php
+						endif;
+						?>
+					</div>
 					<?php if (get_theme_mod('blog_sidebar_enable','1') ) : ?>
-					<div class="col-md-9 col-sm-8 col-xs-12 padding-gap-1 padding-gap-4">
+					<div class="col-md-9 col-sm-8 col-xs-12 padding-gap-2">
 						<?php else: ?>
-						<div class="col-md-12 col-sm-12 col-xs-12 padding-gap-1 padding-gap-4">
+						<div class="col-md-12 col-sm-12 col-xs-12 padding-gap-2">
 							<?php endif; ?>
 							<?php
 							if ( have_posts() ) :
-								if ( is_home() && ! is_front_page() ) : ?>
-									<header>
-										<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-									</header>
-									<?php
-								endif;
 
 								/* Start the Loop */
 								while ( have_posts() ) : the_post();

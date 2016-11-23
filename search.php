@@ -10,12 +10,23 @@
 get_header(); ?>
 
 	<main id="main" class="search-page woocommerce" role="main">
-		<section>
+		<?php if ( class_exists( 'WooCommerce' ) && !is_front_page()) {?>
+			<section class="breadcrumb-wrap text-capitalize">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<?php woocommerce_breadcrumb(); ?>
+						</div>
+					</div>
+				</div>
+			</section>
+		<?php } ?>
+		<section class="padding-gap-1">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 text-center">
-						<header class="page-header margin-null  padding-gap-1">
-							<h2 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'themetim' ), '<span>' . get_search_query() . '</span>' ); ?></h2>
+						<header>
+							<h2 class="page-header margin-null"><?php printf( esc_html__( 'Search Results for: %s', 'themetim' ), '<span>' . get_search_query() . '</span>' ); ?></h2>
 						</header><!-- .page-header -->
 					</div>
 					<div class="col-md-9 col-sm-8 col-xs-12 padding-gap-1 padding-gap-4">

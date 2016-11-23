@@ -14,9 +14,9 @@ $margin[] = 'padding-gap-6 overflow';
 	<header class="entry-header margin-bottom-20">
 		<?php
 		if ( is_single() ) {
-			the_title( '<h3 class="entry-title page-header text-capitalize margin-null">', '</h3>' );
+			the_title( '<h3 class="entry-title text-capitalize margin-null">', '</h3>' );
 		} else {
-			the_title( '<h3 class="entry-title  page-header margin-null text-capitalize"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
+			the_title( '<h3 class="entry-title margin-null text-capitalize"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
 		}
 
 		if ( 'post' === get_post_type() ) : ?>

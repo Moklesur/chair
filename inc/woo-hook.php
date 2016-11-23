@@ -23,8 +23,8 @@ remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_pr
 add_filter('woocommerce_after_shop_loop_item_title', 'themetim_product_hover');
 function themetim_product_hover(){ ?>
     <div class="product-hover text-center">
+        <p><?php woocommerce_template_loop_price();?></p>
         <?php woocommerce_template_loop_rating(); ?>
-        <a href="<?php the_permalink(); ?>" class="btn btn-default"><span>Item Details</span></a>
     </div>
 <?php }
 /**
@@ -35,9 +35,8 @@ function themetim_product_hover(){ ?>
  */
 add_action( 'woocommerce_shop_loop_item_title', 'themetim_product_title_description', 10 );
 function themetim_product_title_description() { ?>
-    <div class="text-center">
-        <h4 class="text-capitalize"><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h4>
-        <p><?php woocommerce_template_loop_price();?></p>
+    <div class="text-center product-title-hover">
+        <h4 class="margin-null margin-top-30"><a href="<?php the_permalink();?>" class="text-capitalize"><?php the_title(); ?></a></h4>
     </div>
     <?php
 }
@@ -63,14 +62,11 @@ add_action( 'woocommerce_after_subcategory', 'custom_add_product_description', 1
 function custom_add_product_description ($category) {
     $cat_id        =    $category->term_id;
     $prod_term    =    get_term($cat_id,'product_cat');
-    $description=    $prod_term->description;
     $slug       =    $category->slug;
     $cat_url = get_term_link( $slug, 'product_cat' );
 
-    echo '<h2><a href='.$cat_url.'>'.$prod_term->name.'</a></h2>';
-    echo '<h4>'.$category->count.' Product</h4>';
-    echo '<p>'.substr( $description,0,110 ).'</p>';
-    echo "<a href='$cat_url' class='btn btn-default text-uppercase'>See Collections</a>";
+    echo '<h4 class="margin-top-30"><a href='.$cat_url.' class=" btn btn-default text-uppercase">'.$prod_term->name.' <i class="fa fa-long-arrow-right"></i></a></h4>';
+    echo '<h4 class="cat-count"><span>'.$category->count.'</span></h4>';
 }
 
 /**
@@ -79,7 +75,7 @@ function custom_add_product_description ($category) {
 add_filter('loop_shop_columns', 'loop_columns');
 if (!function_exists('loop_columns')) {
     function loop_columns() {
-        return 4; // 3 products per row
+        return 2; // 3 products per row
     }
 }
 
@@ -150,35 +146,6 @@ function woocommerce_category_image() {
             echo '<img src="' . $image . '" alt="" class="img-responsive margin-bottom-20" />';
         }
     }
-}
-
-/**
- * ThemeTim Shop Page Thumbs
- */
-add_action('woocommerce_shop_loop_item_title','wps_add_extra_product_thumbs', 5);
-function wps_add_extra_product_thumbs() {
-    global $product;
-    $attachment_ids = $product->get_gallery_attachment_ids();
-    foreach( array_slice( $attachment_ids, 0,1 ) as $attachment_id ) {
-        $thumbnail_url = wp_get_attachment_image_src( $attachment_id, 'post-thumbnail' )[0];
-        echo '<img class="thumbs attachment-shop_catalog size-shop_catalog wp-post-image img-responsive" src="' . $thumbnail_url . '">';
-    }
-}
-
-/**
- * ThemeTim Single Product Page (Next Prev Product)
- */
-//add_action( 'woocommerce_before_single_product', 'bbloomer_prev_next_product' );
-//add_action( 'woocommerce_after_single_product', 'bbloomer_prev_next_product' );
-
-function bbloomer_prev_next_product(){
-    echo '<div class="prev_next_buttons">';
-    // 'product_cat' will make sure to return next/prev from current category
-    $previous = next_post_link('%link', '&larr; PREVIOUS', TRUE, ' ', 'product_cat');
-    $next = previous_post_link('%link', 'NEXT &rarr;', TRUE, ' ', 'product_cat');
-    echo $previous;
-    echo $next;
-    echo '</div>';
 }
 
 /**

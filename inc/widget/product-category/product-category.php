@@ -68,7 +68,7 @@ class ProductCategory_Widget extends WP_Widget {
     public function form( $instance ) {
         $title = ! empty( $instance['title'] ) ? $instance['title'] : __( 'Product Category', 'text_domain' );
         $product_limit = ! empty( $instance['product_limit'] ) ? $instance['product_limit'] : __( '4', 'text_domain' );
-        $product_columns = ! empty( $instance['product_columns'] ) ? $instance['product_columns'] : __( '4', 'text_domain' );
+        $product_columns = ! empty( $instance['product_columns'] ) ? $instance['product_columns'] : __( '2', 'text_domain' );
         $product_carousel_enable = ! empty( $instance['product_carousel_enable'] ) ? $instance['product_carousel_enable'] : __( '', 'text_domain' );
         ?>
         <div class="widget-area">

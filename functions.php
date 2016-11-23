@@ -47,7 +47,6 @@ function themetim_setup() {
 		'primary' => esc_html__( 'Primary', 'themetim' ),
 		'footer-1' => esc_html__( 'Footer 1', 'themetim' ),
 		'footer-2' => esc_html__( 'Footer 2', 'themetim' ),
-		'footer-3' => esc_html__( 'Footer 3', 'themetim' ),
 	) );
 
 	/*
@@ -159,6 +158,11 @@ require get_template_directory() . '/inc/template-tags.php';
  * Custom functions that act independently of the theme templates.
  */
 require get_template_directory() . '/inc/extras.php';
+
+/**
+ * ThemeTim Blog limit
+ */
+update_option( 'posts_per_page', get_theme_mod('blog_posts_limit','4') );
 
 /**
  * Customizer additions.

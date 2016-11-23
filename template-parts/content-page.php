@@ -12,7 +12,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php if(!is_front_page()): ?>
 		<header class="entry-header">
-			<?php the_title( '<h3 class="entry-title page-header">', '</h3>' ); ?>
+			<?php the_title( '<h2 class="entry-title page-header">', '</h2>' ); ?>
 		</header><!-- .entry-header -->
 	<?php endif; ?>
 

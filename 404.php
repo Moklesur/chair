@@ -9,6 +9,17 @@
 
 get_header(); ?>
 	<main id="main" class="site-main" role="main">
+		<?php if ( class_exists( 'WooCommerce' ) && !is_front_page()) {?>
+			<section class="breadcrumb-wrap text-capitalize">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<?php woocommerce_breadcrumb(); ?>
+						</div>
+					</div>
+				</div>
+			</section>
+		<?php } ?>
 		<section class="error-404 not-found padding-gap-1 padding-gap-2">
 			<div class="container">
 				<div class="row">

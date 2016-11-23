@@ -16,3 +16,4 @@ require get_template_directory() . '/inc/widget/recent-blog-news/recent-blog-new
 require get_template_directory() . '/inc/widget/testimonial/testimonial.php';
 require get_template_directory() . '/inc/widget/brand/brand.php';
 require get_template_directory() . '/inc/widget/portfolio/portfolio.php';
+require get_template_directory() . '/inc/widget/heading/heading.php';
