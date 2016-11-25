@@ -22,11 +22,11 @@
     .product-fix:hover .product-hover {
         top: 40px;
     }
-    .woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
-        width: 22.566666%;
-    }
     .woocommerce.archive ul.products li.last{
         margin-right: 0;
+    }
+    .recent-product-widget,.sale-product-widget {
+        padding: 0 30px;
     }
 }
 /********************************************************
@@ -45,14 +45,35 @@
     .recent-product-widget ,.sale-product-widget{
         padding: 0 15px;
     }
-    .woocommerce.columns-4 ul.products li.product{
+    .woocommerce.columns-4 ul.products li.product,.categories-list-widget .woocommerce.columns-3 ul.products li.product{
         width: 48%;
+    }
+    .cart-contents span{
+        display: none;
+    }
+    .primary-menu ul li a {
+        padding: 15px 15px 15px 0;
+    }
+    .discount-fix{
+        padding-top: 0 !important;
     }
 }
 /********************************************************
         ## Max Width 767px
 ********************************************************/
 @media only screen and (max-width:767px) {
+    .widget-area section {
+        padding: 0 0 15px;
+    }
+    main,.home.blog main {
+        padding-top: 0;
+    }
+    .woocommerce.columns-4 ul.products li.product{
+        width: 48%;
+    }
+    .newsletter .form-control{
+        width: 100%;
+    }
     .newsletter h3 {
         margin-right: 0;
         margin-top: 0;
@@ -117,6 +138,7 @@
         padding:15px 5px;
     }
     .navbar-default .navbar-collapse {
+        overflow: hidden;
         padding-left: 15px;
         float: none !important;
         width: 100%;
@@ -163,20 +185,41 @@
         margin-left: 0;
         margin-top: 15px;
     }
+    .categories-list-widget .woocommerce.columns-3 ul.products li.product{
+        width: 48%;
+    }
+    .discount-fix{
+        padding-top: 0 !important;
+    }
 }
 /********************************************************
         ## Max Width 480px
 ********************************************************/
 @media only screen and (max-width:480px) {
-    .woocommerce ul.products li.product, .woocommerce-page ul.products li.product, .woocommerce-page[class*=columns-] ul.products li.product, .woocommerce[class*=columns-] ul.products li.product{
+    .woocommerce-Price-amount,.slider-wrap p{
+        display: none;
+    }
+    .header-phone{
+        padding-right: 0;
+    }
+    .woocommerce ul.products li.product, .woocommerce-page ul.products li.product, .woocommerce-page[class*=columns-] ul.products li.product, .woocommerce[class*=columns-] ul.products li.product,.categories-list-widget .woocommerce.columns-3 ul.products li.product,.woocommerce table.cart td.actions .coupon .button,.woocommerce-cart table.cart td.actions .coupon .input-text{
         width: 100%;
+    }
+    .woocommerce table.cart td.actions .coupon .button{
+        margin-top: 20px;
+        margin-bottom: 10px;
     }
 }
 /********************************************************
         Max Width 320px
 ********************************************************/
 @media only screen and (max-width:320px) {
-
+    .social-sharing{
+        width: 100%;
+    }
+    .badge{
+        display: none;
+    }
 }
 /********************************************************
         Max Width 240px

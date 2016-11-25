@@ -65,7 +65,7 @@ function custom_add_product_description ($category) {
     $slug       =    $category->slug;
     $cat_url = get_term_link( $slug, 'product_cat' );
 
-    echo '<h4 class="margin-top-30"><a href='.$cat_url.' class=" btn btn-default text-uppercase">'.$prod_term->name.' <i class="fa fa-long-arrow-right"></i></a></h4>';
+    echo '<h4 class="margin-top-30"><a href='.$cat_url.' class=" btn btn-default text-uppercase">'.$prod_term->name.' <i class="fa fa-long-arrow-right margin-left-10"></i></a></h4>';
     echo '<h4 class="cat-count"><span>'.$category->count.'</span></h4>';
 }
 
@@ -86,7 +86,7 @@ add_filter( 'woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart
 function woocommerce_header_add_to_cart_fragment( $fragments ) {
     ob_start();
     ?>
-    <a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>"><i class="fa fa-shopping-basket"></i> <?php echo WC()->cart->get_cart_total(); ?> <span class="badge"><?php echo sprintf (_n( '%d', '%d', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?></span></a>
+    <a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>"><i class="fa fa-shopping-basket"></i> <?php echo WC()->cart->get_cart_total(); ?> <span class="badge "><?php echo sprintf (_n( '%d', '%d', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?></span></a>
     <?php
 
     $fragments['a.cart-contents'] = ob_get_clean();

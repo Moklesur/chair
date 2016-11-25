@@ -73,62 +73,11 @@ function themetim_typography_color($color) {
 
     $color .= ".btn-primary, .btn-primary.disabled{ background-color:" . esc_attr($btn_primary_bg) . "; color: " . esc_attr($btn_primary_text) . ";border-color: " . esc_attr($btn_primary_border) . "; } ";
 
-    $btn_primary_bg_hover = get_theme_mod( 'btn_primary_bg_hover', '#fff' );
-    $btn_primary_text_hover = get_theme_mod( 'btn_primary_text_hover', '#000' );
-    $btn_primary_border_hover = get_theme_mod( 'btn_primary_border_hover', '#fff' );
+    $btn_primary_bg_hover = get_theme_mod( 'btn_primary_bg_hover', '#ffbd33' );
+    $btn_primary_text_hover = get_theme_mod( 'btn_primary_text_hover', '#fff' );
+    $btn_primary_border_hover = get_theme_mod( 'btn_primary_border_hover', '#ffbd33' );
 
     $color .= ".btn-primary.active, .btn-primary.focus, .btn-primary:active, .btn-primary:focus, .btn-primary:hover, .open>.dropdown-toggle.btn-primary{ background-color:" . esc_attr($btn_primary_bg_hover) . "; color: " . esc_attr($btn_primary_text_hover) . ";border-color: " . esc_attr($btn_primary_border_hover) . "; } ";
-
-    /*
-     * Success Button
-     */
-    $btn_success_bg = get_theme_mod( 'btn_success_bg', '#fff' );
-    $btn_success_text = get_theme_mod( 'btn_success_text', '#000' );
-    $btn_success_border = get_theme_mod( 'btn_success_border', '#fff' );
-
-    $color .= ".btn-success,.btn-success.disabled{ background-color:" . esc_attr($btn_success_bg) . "; color: " . esc_attr($btn_success_text) . ";border-color: " . esc_attr($btn_success_border) . "; } ";
-
-    $btn_success_bg_hover = get_theme_mod( 'btn_success_bg_hover', '#000' );
-    $btn_success_text_hover = get_theme_mod( 'btn_success_text_hover', '#fff' );
-    $btn_success_border_hover = get_theme_mod( 'btn_success_border_hover', '#000' );
-
-    $color .= ".btn-success.active, .btn-success.focus, .btn-success:active, .btn-success:focus, .btn-success:hover, .open>.dropdown-toggle.btn-success{ background-color:" . esc_attr($btn_success_bg_hover) . "; color: " . esc_attr($btn_success_text_hover) . ";border-color: " . esc_attr($btn_success_border_hover) . "; } ";
-
-    /*
-     * Extra Text Color
-     */
-    $text_color_1 = get_theme_mod( 'text_color_1', '#000' );
-    $text_color_2 = get_theme_mod( 'text_color_2', '#ccc' );
-
-    $color .= ".text-color-1{ color: " . esc_attr($text_color_1) . "; } ";
-    $color .= ".text-color-2{ color: " . esc_attr($text_color_2) . "; } ";
-
-    /*
-     * Extra Background Color
-     */
-    $bg_color_1 = get_theme_mod( 'bg_color_1', '#ffbd33' );
-    $bg_color_2 = get_theme_mod( 'bg_color_2', '#fff' );
-
-    $color .= ".background-1,.primary-menu .dropdown-submenu:hover>.dropdown-menu, .primary-menu ul.nav li.dropdown:hover > ul.dropdown-menu{ background-color: " . esc_attr($bg_color_1) . "; } ";
-    $color .= ".background-2,.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover{ background-color: " . esc_attr($bg_color_2) . "; } ";
-
-    /*
-     * Section Gap
-     */
-/*    $section_gap_1 = get_theme_mod( 'section_gap_1', '80' );
-    $section_gap_2 = get_theme_mod( 'section_gap_2', '80' );
-    $section_gap_3 = get_theme_mod( 'section_gap_3', '50' );
-    $section_gap_4 = get_theme_mod( 'section_gap_4', '50' );
-
-    $color .= ".section-gap-1{ padding-top: " . esc_attr($section_gap_1) . "; } ";
-    $color .= ".section-gap-2{ padding-bottom: " . esc_attr($section_gap_2) . "; } ";
-    $color .= ".section-gap-3{ padding-top: " . esc_attr($section_gap_3) . "; } ";
-    $color .= ".section-gap-4{ padding-bottom: " . esc_attr($section_gap_4) . "; } ";*/
-
-
-    /*
-     * ThemeTim Typography & Color Inline
-     */
 
     wp_add_inline_style( 'themetim', $color );
 }

@@ -65,7 +65,7 @@ $margin[] = 'padding-gap-6 overflow';
 		</div>
 		<?php endif; ?>
 		<?php if (get_theme_mod('blog_social_sharing_enable', '1')) : ?>
-		<div class="pull-right margin-top-10">
+		<div class="pull-right margin-top-10 social-sharing">
 			<?php themetim_social_sharing(); ?>
 		</div>
 		<?php endif; ?>

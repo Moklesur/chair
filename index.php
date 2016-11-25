@@ -26,7 +26,7 @@ get_header(); ?>
 				</div>
 			</section>
 		<?php } ?>
-		<section class="banner">
+		<section class="banner padding-gap-1">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 col-sm-12 col-xs-12">
@@ -40,7 +40,7 @@ get_header(); ?>
 						?>
 					</div>
 					<?php if (get_theme_mod('blog_sidebar_enable','1') ) : ?>
-					<div class="col-md-9 col-sm-8 col-xs-12 padding-gap-2">
+					<div class="col-md-9 col-sm-12 col-xs-12 padding-gap-2">
 						<?php else: ?>
 						<div class="col-md-12 col-sm-12 col-xs-12 padding-gap-2">
 							<?php endif; ?>

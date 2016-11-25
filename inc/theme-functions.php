@@ -50,13 +50,15 @@ add_action( 'themetim_header_social', 'header_social' );
  * Header My Account
  */
 function header_account(){
-    if(get_theme_mod('top_header_account_enable', '1')){
-        $login_register =  get_permalink(get_theme_mod('header_login_register'));
-        $header_myaccount =  get_permalink(get_theme_mod('header_myaccount'));
-        if(is_user_logged_in()){
-            echo '<li><a href="'.$header_myaccount.'">'.get_theme_mod('top_header_account','Account').'</a></li><li><a href="'.wp_logout_url().'">Logout</a></li>';
-        }else{
-            echo '<li><a href="'.$login_register.'">Login</a></li><li><a href="'.$login_register.'">Register</a></li>';
+    if ( class_exists( 'WooCommerce' ) ) {
+        if (get_theme_mod('top_header_account_enable', '1')) {
+            $login_register = get_permalink(get_theme_mod('header_login_register'));
+            $header_myaccount = get_permalink(get_theme_mod('header_myaccount'));
+            if (is_user_logged_in()) {
+                echo '<li><a href="' . $header_myaccount . '">' . get_theme_mod('top_header_account', 'Account') . '</a></li><li><a href="' . wp_logout_url() . '">Logout</a></li>';
+            } else {
+                echo '<li><a href="' . $login_register . '">Login</a></li><li><a href="' . $login_register . '">Register</a></li>';
+            }
         }
     }
 }
@@ -73,7 +75,7 @@ function footer_newsletter(){
         <div class="form-group">
             <h3 class="pull-left">Newsletter</h3>
             <input type="email" class="form-control" name="newsletter-email" id="newsletter-email" placeholder="info@yoursite.com" required="">
-            <button type="submit" class="btn btn-default">Subscribe</button>
+            <button type="submit" class="btn btn-primary">Subscribe</button>
         </div>
     </form>
     <?php

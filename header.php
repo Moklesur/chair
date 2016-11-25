@@ -26,7 +26,7 @@
 		<section class="header-top padding-top-10 padding-bottom-10 text-center-xs">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-6 col-sm-6 col-xs-12">
+					<div class="col-md-6 col-sm-6 col-xs-6 header-phone">
 						<ul class="list-inline header-info margin-null">
 							<?php
 							if(get_theme_mod('top_header_tel_enable', '1')):
@@ -35,7 +35,7 @@
 							?>
 						</ul>
 					</div>
-					<div class="col-md-6 col-sm-6 col-xs-12">
+					<div class="col-md-6 col-sm-6 col-xs-6">
 						<ul class="list-inline account-social text-right margin-null">
 							<?php do_action('themetim_header_account'); ?>
 						</ul>

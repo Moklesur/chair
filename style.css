@@ -18,7 +18,7 @@ body{
 .themetim-loading{
 	background: #fff;
 }
-a,.btn,input,button,.woocommerce .product-fix .compare,.woocommerce .product-fix .yith-wcqv-button,.woocommerce ul.products li.product .thumbs,.header,.sticky .header-bottom,.sticky .header-bottom,.header-bottom,.woocommerce div.product div.images div.thumbnails .owl-controls,.related .owl-controls,.olw-next-prev span, .owl-nav span,.product-category .cat-count,.product-category>a:after{
+a,.btn,input,button,.woocommerce .product-fix .compare,.woocommerce .product-fix .yith-wcqv-button,.woocommerce ul.products li.product .thumbs,.header,.sticky .header-bottom,.sticky .header-bottom,.header-bottom,.woocommerce div.product div.images div.thumbnails .owl-controls,.related .owl-controls,.olw-next-prev span, .owl-nav span,.product-category .cat-count,.product-category>a:after,.camera_prevThumbs, .camera_nextThumbs, .camera_prev, .camera_next, .camera_commands, .camera_thumbs_cont,.main-slider .camera_prev,.main-slider .camera_next {
 	-webkit-transition: all .3s ease-in-out;
 	-moz-transition: all .3s ease-in-out;
 	-ms-transition: all .3s ease-in-out;
@@ -173,6 +173,9 @@ p,.woocommerce-Address address {
 .margin-bottom-0{
 	margin-bottom:0;
 }
+.margin-left-10{
+	margin-left: 10px;
+}
 .woocommerce ul.products li.product .price del,.margin-right-10{
 	margin-right: 10px;
 }
@@ -194,7 +197,7 @@ p,.woocommerce-Address address {
 .home main{
 	padding-top: 0;
 }
-main{
+.home.blog main,main{
 	padding-top: 112px;
 }
 /********************************************************
@@ -252,7 +255,7 @@ header,.sticky .header-bottom{
 .search-cart .search-fix{
 	left: auto;
 	right: 0;
-	width: 277px;
+	width: 286px;
 	padding: 6px 10px;
 	margin: 5px 0 0 0;
 	border-radius:0 ;
@@ -272,6 +275,27 @@ header,.sticky .header-bottom{
 }
 .main-slider{
 	margin: 0 !important;
+}
+.camera_prev > span, .camera_next > span {
+	display: none;
+}
+.camera_prev, .camera_next, .camera_commands {
+	line-height: 48px;
+	text-align: center;
+	border-radius: 50%;
+}
+.main-slider:hover .camera_prev {
+	left: 30px;
+}
+.main-slider:hover .camera_next {
+	right: 30px;
+}
+.camera_prevThumbs, .camera_nextThumbs, .camera_prev, .camera_next, .camera_commands, .camera_thumbs_cont {
+	background: #ffbd33;
+	color: #fff;
+}
+.camera_prevThumbs:hover, .camera_nextThumbs:hover, .camera_prev:hover, .camera_next:hover, .camera_commands:hover, .camera_thumbs_cont:hover{
+	background: #000;
 }
 .camera_wrap .camera_pag .camera_pag_ul{
 	text-align: center;
@@ -335,10 +359,17 @@ header,.sticky .header-bottom{
 	z-index: 1;
 	height: 40px;
 	width: 40px;
-	border: 1px solid #333;
+	border: 1px solid #ffbd33;
+	background: #ffbd33;
+	color: #fff;
 	line-height: 47px;
 	border-radius: 100%;
 	cursor: pointer;
+}
+.olw-next-prev span:hover, .owl-nav span:hover{
+	background: #000;
+	color: #fff;
+	border-color: #000;
 }
 .owl-nav span{
 	margin: 0 -20px !important;
@@ -564,11 +595,6 @@ header,.sticky .header-bottom{
 	background: #ffbd33;
 	color: #fff;
 	border-radius: 50%;
-}
-.olw-next-prev span:hover, .owl-nav span:hover{
-	background: #ffbd33;
-	color: #fff;
-	border-color: #ffbd33;
 }
 .woocommerce div.product div.images div.thumbnails .owl-controls,.related .owl-controls{
 	opacity: 0;

@@ -13,7 +13,6 @@ jQuery(function(){
             loader: 'bar',
             margin:'',
             alignment: 'center',
-            minHeight: '600px',
             barPosition: 'bottom',
             thumbnails: true,
             playPause: false,
@@ -22,6 +21,8 @@ jQuery(function(){
             hover: true,
             opacityOnGrid: false
         });
+        $('.camera_wrap').find('.camera_prev').append('<i class="fa fa-angle-left fa-2x"></i>');
+        $('.camera_wrap').find('.camera_next').append('<i class="fa fa-angle-right fa-2x"></i>');
     }
     /*******************************************************************************
      * Carousel Slider
@@ -31,7 +32,23 @@ jQuery(function(){
             loop:true,
             margin:30,
             responsiveClass:true,
-            items:4,
+            responsive:{
+                0:{
+                    items:1
+                },
+                480:{
+                    items:2
+                },
+                768:{
+                    items:3
+                },
+                1024:{
+                    items:3
+                },
+                1366:{
+                    items:4
+                }
+            },
             autoplay:false,
             animateOut: true,
             nav: true,
@@ -45,7 +62,6 @@ jQuery(function(){
             margin:10,
             responsiveClass:true,
             items:4,
-            autoplay:true,
             nav: true,
             navText: ["<span><i class='fa fa-angle-left fa-2x'></i></span>","<span><i class='fa fa-angle-right  fa-2x'></i></span>"]
         });
